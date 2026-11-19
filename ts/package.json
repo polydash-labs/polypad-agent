@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "viem": "^2.0.0"
+  },
+  "description": "Thin typed client for the Polypad agent API (MCP) on Robinhood Chain: prepare → sign → confirm, persistent wallet binding, and x402 pay-per-call.",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "keywords": [
+    "polypad",
+    "mcp",
+    "robinhood-chain",
+    "agent"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "polypad-agent",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "smoke": "tsx examples/smoke.ts"
+  },
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "version": "2.0.0"
+}

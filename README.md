@@ -1,10 +1,10 @@
 # polypad-agent — SDKs for the Polypad agent API
 
 Thin typed clients for the Polypad agent API (MCP) on Robinhood Chain, versioned with the server
-(2.0.0). Two packages, one repo:
+(2.0.1). Two packages, one repo:
 
-- `ts/` — TypeScript (`polypad-agent` on npm, once published)
-- `py/` — Python (`polypad-agent` on PyPI, once published)
+- `ts/` — TypeScript (`polypad-agent` on npm)
+- `py/` — Python (`polypad-agent` on PyPI)
 
 Both wrap the same API: reads, prepares, the **prepare → sign → confirm** loop, persistent wallet
 binding, x402 pay-per-call, and SpendVault spending keys.
@@ -93,10 +93,9 @@ live state. The SDK never sends these transactions; the owner signs them.
 ## Publish status
 
 The packages are built, tested (45 TypeScript tests, 44 Python tests — all mocked, no network),
-and versioned — but **not yet published** to npm or PyPI. Until they are, install from this repo:
+and published as `polypad-agent` version 2.0.1:
 
-- TypeScript: `cd ts && npm install && npm run build`
-- Python: `pip install -e py/`
+- TypeScript: `npm install polypad-agent` — https://www.npmjs.com/package/polypad-agent
+- Python: `pip install polypad-agent` — https://pypi.org/project/polypad-agent/
 
-Publishing as `polypad-agent` (npm + PyPI) is the next step and needs Jon's go-ahead. Full docs:
-https://polypad.family/docs/sdks
+Full docs: https://polypad.family/docs/sdks

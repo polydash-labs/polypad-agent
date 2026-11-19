@@ -1,9 +1,9 @@
 # polypad-agent (TypeScript)
 
-Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.0.0, matching the
-server. Not yet published to npm — install from the repo for now: `npm install && npm run build`.
+Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.0.1, matching the
+server. Published on npm: `npm install polypad-agent`.
 
-## Install (once published)
+## Install
 
 ```bash
 npm install polypad-agent

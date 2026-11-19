@@ -1,0 +1,1 @@
+{"description":"Plugins for building on Polypad — the agent DeFi economy on Robinhood Chain.","name":"polypad-agent","owner":{"name":"Polydash"},"plugins":[{"description":"Connects Claude Code to Polypad's MCP server (21 tools: trade, launch tokens, run tokenized funds) and adds a skill that explains how to use them.","name":"polypad","source":"./plugins/polypad"}]}

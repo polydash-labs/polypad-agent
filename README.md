@@ -9,6 +9,31 @@ Thin typed clients for the Polypad agent API (MCP) on Robinhood Chain, versioned
 Both wrap the same API: reads, prepares, the **prepare → sign → confirm** loop, persistent wallet
 binding, x402 pay-per-call, and SpendVault spending keys.
 
+## Claude Code plugin
+
+One command connects Claude Code to Polypad — no config file to write by hand. The plugin
+(`plugins/polypad/`) adds the Polypad MCP server (21 tools) and a skill that explains how to use
+them. The marketplace is defined in `.claude-plugin/marketplace.json`.
+
+In a Claude Code session:
+
+```
+/plugin marketplace add polydash-labs/polypad-agent
+/plugin install polypad@polypad-agent
+```
+
+Or from a shell:
+
+```bash
+claude plugin marketplace add polydash-labs/polypad-agent
+claude plugin install polypad@polypad-agent
+```
+
+Then run `/polypad:use-polypad` or just ask Claude to trade, launch a token, or start a fund.
+The plugin is validated by JSON syntax and name checks in this repo; run
+`claude plugin validate .` from the repo root to check it with Claude Code itself (the CLI was
+not available in the environment where this was written).
+
 ## Wallet binding: connect once
 
 The agent API is keyless, but a prepare call needs to know which wallet will sign. The old way is

@@ -1,10 +1,9 @@
 # polypad-agent — SDKs for the Polypad agent API
 
-Thin typed clients for the Polypad agent API (MCP) on Robinhood Chain, versioned with the server
-(2.0.1). Two packages, one repo:
+Thin typed clients for the Polypad agent API (MCP) on Robinhood Chain. Two packages, one repo:
 
-- `ts/` — TypeScript (`polypad-agent` on npm)
-- `py/` — Python (`polypad-agent` on PyPI)
+- `ts/` — TypeScript (`polypad-agent` on npm, version 2.1.0)
+- `py/` — Python (`polypad-agent` on PyPI, version 2.0.1)
 
 Both wrap the same API: reads, prepares, the **prepare → sign → confirm** loop, persistent wallet
 binding, x402 pay-per-call, and SpendVault spending keys.
@@ -33,6 +32,40 @@ Then run `/polypad:use-polypad` or just ask Claude to trade, launch a token, or 
 The plugin is validated by JSON syntax and name checks in this repo; run
 `claude plugin validate .` from the repo root to check it with Claude Code itself (the CLI was
 not available in the environment where this was written).
+
+## One-command connect (`polypad connect`)
+
+One command wires Polypad's remote MCP server into any AI host — no config
+file to write by hand, no account to create. The free tier needs no key.
+
+```bash
+npx -y polypad-agent connect claude
+```
+
+Or after a global install:
+
+```bash
+npm install -g polypad-agent
+polypad connect cursor
+```
+
+Supported hosts: `claude` (Claude Code), `cursor`, `codex`, `gemini`,
+`vscode` (VS Code / Copilot), `grok` (prints the steps — Grok has no local
+config file). With a Pro key for higher rate limits:
+
+```bash
+polypad connect cursor --key pp_live_...
+```
+
+Other forms: `polypad connect --list` (which hosts are already connected),
+`polypad connect vscode --local` (project-level config — claude, cursor,
+vscode), `polypad connect claude --dry-run`, `polypad --help`,
+`polypad --version`. The command refuses to overwrite an existing Polypad
+entry unless you pass `--force`, and never prints your key.
+
+After connecting, restart the host and paste a first prompt:
+`What tokens launched on Robinhood Chain today?` or
+`Start a tokenized fund for me.`
 
 ## Wallet binding: connect once
 
@@ -117,10 +150,10 @@ live state. The SDK never sends these transactions; the owner signs them.
 
 ## Publish status
 
-The packages are built, tested (45 TypeScript tests, 44 Python tests — all mocked, no network),
-and published as `polypad-agent` version 2.0.1:
+The packages are built, tested (70 TypeScript tests, 44 Python tests — all mocked, no network),
+and published as `polypad-agent`:
 
-- TypeScript: `npm install polypad-agent` — https://www.npmjs.com/package/polypad-agent
-- Python: `pip install polypad-agent` — https://pypi.org/project/polypad-agent/
+- TypeScript: `npm install polypad-agent` — https://www.npmjs.com/package/polypad-agent (2.1.0)
+- Python: `pip install polypad-agent` — https://pypi.org/project/polypad-agent/ (2.0.1)
 
 Full docs: https://polypad.family/docs/sdks

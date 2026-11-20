@@ -1,4 +1,7 @@
 {
+  "bin": {
+    "polypad": "./dist/cli.js"
+  },
   "dependencies": {
     "viem": "^2.0.0"
   },
@@ -33,5 +36,5 @@
   },
   "type": "module",
   "types": "dist/index.d.ts",
-  "version": "2.0.1"
+  "version": "2.1.0"
 }

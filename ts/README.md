@@ -1,6 +1,6 @@
 # polypad-agent (TypeScript)
 
-Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.0.1, matching the
+Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.1.0, matching the
 server. Published on npm: `npm install polypad-agent`.
 
 ## Install
@@ -8,6 +8,45 @@ server. Published on npm: `npm install polypad-agent`.
 ```bash
 npm install polypad-agent
 ```
+
+## One-command connect (`polypad connect`)
+
+One command wires Polypad's remote MCP server into your AI host — no config
+file to write by hand, no account to create. The free tier needs no key.
+
+```bash
+npx -y polypad-agent connect claude
+```
+
+Or after a global install:
+
+```bash
+npm install -g polypad-agent
+polypad connect cursor
+```
+
+Supported hosts: `claude` (Claude Code), `cursor`, `codex`, `gemini`,
+`vscode` (VS Code / Copilot), `grok` (prints the steps — Grok has no local
+config file). With a Pro key for higher rate limits:
+
+```bash
+polypad connect cursor --key pp_live_...
+```
+
+Other forms:
+
+```bash
+polypad connect --list        # which hosts are already connected
+polypad connect vscode --local # project-level config (claude, cursor, vscode)
+polypad connect claude --dry-run
+polypad --help
+polypad --version
+```
+
+After connecting, restart the host and paste a first prompt:
+
+- `What tokens launched on Robinhood Chain today?`
+- `Start a tokenized fund for me.`
 
 ## Connect once
 

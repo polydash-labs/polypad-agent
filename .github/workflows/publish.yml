@@ -1,0 +1,37 @@
+name: Publish to npm
+
+# Publishes polypad-agent to npm. Runs from GitHub's runners (not the
+# Atlas VM, whose egress policy denies PUTs to the npm registry).
+# Trigger manually (Actions tab -> Publish to npm -> Run workflow), or by
+# pushing a v* tag. Publishes the version in ts/package.json.
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish polypad-agent
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          cache: npm
+          cache-dependency-path: ts/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

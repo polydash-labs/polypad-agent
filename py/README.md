@@ -1,6 +1,6 @@
 # polypad-agent (Python)
 
-Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.0.2.
+Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.0.1.
 Published on PyPI: `pip install polypad-agent`.
 
 [polypad.family](https://polypad.family) · [Build guide](https://polypad.family/build) · [GitHub](https://github.com/polydash-labs/polypad-agent) · [MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=family.polypad) · [Capability Index](https://capability-index-dhn.pages.dev/?q=polypad)

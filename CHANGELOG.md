@@ -4,7 +4,10 @@ All notable changes to the TypeScript (`polypad-agent` on npm) and Python
 (`polypad-agent` on PyPI) SDKs. The TypeScript package carries the `polypad`
 CLI (`polypad connect`); the Python package is a library only.
 
-## 2.1.1 (TypeScript) / 2.0.2 (Python) — 2026-11-21
+## Unreleased — next patch (npm 2.1.1 / PyPI 2.0.2)
+
+These README and metadata changes are on `main`. Package versions stay at
+npm 2.1.0 and PyPI 2.0.1 until the patch is published.
 
 ### Added
 

@@ -12,8 +12,8 @@
 
 Thin typed clients for the Polypad agent API (MCP) on Robinhood Chain. Two packages, one repo:
 
-- `ts/` — TypeScript (`polypad-agent` on npm, version 2.1.1)
-- `py/` — Python (`polypad-agent` on PyPI, version 2.0.2)
+- `ts/` — TypeScript (`polypad-agent` on npm, version 2.1.0)
+- `py/` — Python (`polypad-agent` on PyPI, version 2.0.1)
 
 Both wrap the same API: reads, prepares, the **prepare → sign → confirm** loop, persistent wallet
 binding, x402 pay-per-call, and SpendVault spending keys.

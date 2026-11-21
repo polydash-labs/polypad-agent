@@ -1,7 +1,11 @@
 # polypad-agent (TypeScript)
 
-Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.1.0, matching the
-server. Published on npm: `npm install polypad-agent`.
+Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.1.1.
+Published on npm: `npm install polypad-agent`.
+
+[polypad.family](https://polypad.family) · [Build guide](https://polypad.family/build) · [GitHub](https://github.com/polydash-labs/polypad-agent) · [MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=family.polypad) · [Capability Index](https://capability-index-dhn.pages.dev/?q=polypad)
+
+> Part of [Polydash](https://github.com/polydash-labs/Polydash). If this SDK helps you, please ⭐ the main repo.
 
 ## Install
 
@@ -43,7 +47,7 @@ polypad --help
 polypad --version
 ```
 
-After connecting, restart the host and paste a first prompt:
+After connecting, restart the host and paste a prompt:
 
 - `What tokens launched on Robinhood Chain today?`
 - `Start a tokenized fund for me.`
@@ -130,4 +134,3 @@ npm test   # build + 45 node:test tests (mocked transport, no network)
 ```
 
 Per-call `from` still works: pass it explicitly and the client leaves the token out for that call.
-Contracts are unaudited.

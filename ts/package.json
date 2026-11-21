@@ -21,9 +21,14 @@
     }
   },
   "keywords": [
-    "polypad",
     "mcp",
+    "mcp-server",
     "robinhood-chain",
+    "x402",
+    "ai-agents",
+    "polypad",
+    "claude",
+    "cursor",
     "agent"
   ],
   "license": "MIT",
@@ -36,5 +41,14 @@
   },
   "type": "module",
   "types": "dist/index.d.ts",
-  "version": "2.1.0"
+  "version": "2.1.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polydash-labs/polypad-agent.git",
+    "directory": "ts"
+  },
+  "homepage": "https://polypad.family/build",
+  "bugs": {
+    "url": "https://github.com/polydash-labs/polypad-agent/issues"
+  }
 }

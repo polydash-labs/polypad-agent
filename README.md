@@ -1,12 +1,57 @@
 # polypad-agent — SDKs for the Polypad agent API
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/polypad-agent"><img src="https://img.shields.io/npm/v/polypad-agent?label=npm%20polypad-agent" alt="npm"></a>
+  <a href="https://pypi.org/project/polypad-agent/"><img src="https://img.shields.io/pypi/v/polypad-agent?label=PyPI%20polypad-agent" alt="PyPI"></a>
+  <a href="https://registry.modelcontextprotocol.io/v0/servers?search=family.polypad"><img src="https://img.shields.io/badge/MCP%20Registry-family.polypad-6E56CF" alt="MCP Registry"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT"></a>
+  <a href="https://github.com/polydash-labs/Polydash/stargazers"><img src="https://img.shields.io/github/stars/polydash-labs/Polydash?style=social" alt="Star Polydash"></a>
+</p>
+
+> Part of [Polydash](https://github.com/polydash-labs/Polydash). If this SDK helps you, please ⭐ the main repo.
+
 Thin typed clients for the Polypad agent API (MCP) on Robinhood Chain. Two packages, one repo:
 
-- `ts/` — TypeScript (`polypad-agent` on npm, version 2.1.0)
-- `py/` — Python (`polypad-agent` on PyPI, version 2.0.1)
+- `ts/` — TypeScript (`polypad-agent` on npm, version 2.1.1)
+- `py/` — Python (`polypad-agent` on PyPI, version 2.0.2)
 
 Both wrap the same API: reads, prepares, the **prepare → sign → confirm** loop, persistent wallet
 binding, x402 pay-per-call, and SpendVault spending keys.
+
+[polypad.family](https://polypad.family) · [Build guide](https://polypad.family/build) · [MCP Registry: `family.polypad/polypad`](https://registry.modelcontextprotocol.io/v0/servers?search=family.polypad) · [Capability Index](https://capability-index-dhn.pages.dev/?q=polypad)
+
+## Connect your AI agent in about a minute
+
+Free path, no signup and no API key. Details: [polypad.family/build](https://polypad.family/build).
+
+```bash
+npx -y polypad-agent connect claude     # or: cursor, codex, gemini, vscode
+```
+
+Restart your client and ask:
+
+> What tokens launched on Robinhood Chain today?
+
+That's it: no account, no key. Prefer config? Point any MCP client at the remote server:
+
+```json
+{ "mcpServers": { "polypad": { "url": "https://polypad.family/api/mcp" } } }
+```
+
+Or install the SDK and make a call in five lines:
+
+```bash
+npm install polypad-agent
+# or: pip install polypad-agent
+```
+
+```ts
+import { PolypadClient } from "polypad-agent";
+
+const client = new PolypadClient();
+const tokens = await client.listTokens({ sort: "new", limit: 5 });
+console.log(tokens);
+```
 
 ## Claude Code plugin
 
@@ -63,7 +108,7 @@ vscode), `polypad connect claude --dry-run`, `polypad --help`,
 `polypad --version`. The command refuses to overwrite an existing Polypad
 entry unless you pass `--force`, and never prints your key.
 
-After connecting, restart the host and paste a first prompt:
+After connecting, restart the host and paste a prompt:
 `What tokens launched on Robinhood Chain today?` or
 `Start a tokenized fund for me.`
 
@@ -147,13 +192,17 @@ live state. The SDK never sends these transactions; the owner signs them.
 
 - `docs/wallet-binding.md` — the persistent token model, exactly as the live server implements it.
 - `docs/frameworks/langchain.md` and `docs/frameworks/vercel-ai-sdk.md` — framework guides.
+- Live product docs: https://polypad.family/docs/sdks
+
+## Support the project
+
+- ⭐ Star [polydash-labs/Polydash](https://github.com/polydash-labs/Polydash). That is the repo we are asking people to star.
+- Issues and feature requests are welcome in this repo too.
 
 ## Publish status
 
 The packages are built, tested (70 TypeScript tests, 44 Python tests — all mocked, no network),
 and published as `polypad-agent`:
 
-- TypeScript: `npm install polypad-agent` — https://www.npmjs.com/package/polypad-agent (2.1.0)
-- Python: `pip install polypad-agent` — https://pypi.org/project/polypad-agent/ (2.0.1)
-
-Full docs: https://polypad.family/docs/sdks
+- TypeScript: `npm install polypad-agent` — https://www.npmjs.com/package/polypad-agent
+- Python: `pip install polypad-agent` — https://pypi.org/project/polypad-agent/

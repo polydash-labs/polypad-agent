@@ -1,7 +1,11 @@
 # polypad-agent (Python)
 
-Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.0.1, matching the
-server. Published on PyPI: `pip install polypad-agent`.
+Thin typed client for the Polypad agent API (MCP) on Robinhood Chain. Version 2.0.2.
+Published on PyPI: `pip install polypad-agent`.
+
+[polypad.family](https://polypad.family) · [Build guide](https://polypad.family/build) · [GitHub](https://github.com/polydash-labs/polypad-agent) · [MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=family.polypad) · [Capability Index](https://capability-index-dhn.pages.dev/?q=polypad)
+
+> Part of [Polydash](https://github.com/polydash-labs/Polydash). If this SDK helps you, please ⭐ the main repo.
 
 ## Install
 
@@ -90,4 +94,3 @@ PYTHONPATH=src python -m unittest discover -s tests -v   # 44 tests (mocked tran
 ```
 
 Per-call `from` still works: pass it explicitly and the client leaves the token out for that call.
-Contracts are unaudited.

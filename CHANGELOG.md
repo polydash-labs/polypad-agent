@@ -4,6 +4,17 @@ All notable changes to the TypeScript (`polypad-agent` on npm) and Python
 (`polypad-agent` on PyPI) SDKs. The TypeScript package carries the `polypad`
 CLI (`polypad connect`); the Python package is a library only.
 
+## 2.1.1 (TypeScript) / 2.0.2 (Python) — 2026-11-21
+
+### Added
+
+- Package metadata so the npm and PyPI pages link back to GitHub: `repository`,
+  `homepage` (`https://polypad.family/build`), `bugs`, and keywords.
+- MIT `LICENSE` (matching [polydash-labs/Polydash](https://github.com/polydash-labs/Polydash)).
+- README quickstart at the top: keyless MCP connect, SDK install, and a short
+  example, plus links to polypad.family, /build, the MCP Registry, and the
+  Capability Index.
+
 ## 2.1.0 — 2026-11-19 (TypeScript only; Python stays 2.0.1)
 
 ### Added
